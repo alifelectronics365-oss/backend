@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e9ecef; /* A light gray background */
+}
+
+.menu-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+/* Navbar Styling */
+.navbar-container {
+    background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+   
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger text for brand name */
+    font-weight: 700; /* Bolder font */
+    color: inherit;
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Button class for the logo link */
+.button-class {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Menu Links Container */
+
+.menu-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    gap: 30px; /* Space between each menu item */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:  #f8f9fa; /* Default dark text */
+    font-size: 18px; /* Text size */
+    padding: 12px 18px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Icon Styling */
+.menu-item i {
+    font-size: 22px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #f8f9fa; /* Default icon color */
+   
+}
+
+/* Text Styling */
+.menu-item span {
+    font-size: 18px; /* Font size for menu text */
+    font-weight: 600; /* Bolder text for emphasis */
+}
+
+/* Active Menu Item */
+.menu-item.active {
+   
+    color:  black; /* White text for active item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+}
+
+.menu-item.active i {
+    color:  #199576; /* White icon for active item */
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    
+    /* Navbar Styling */
+    .navbar-container {
+        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+        width: 100%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        padding: 5px 7px;
+        border-radius: 10px;
+        background-color: none; /* Educational site color */
+        color: #ffffff; /* White text for contrast */
+        font-weight: bold;
+        font-size: 17px; /* Standard font size for small devices */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+        margin-right: 3px;
+    }
+    
+    .navbar-brand {
+        font-size: 23px; /* Standard font size for brand name */
+        font-weight: 700; /* Bolder font */
+        color: inherit;
+        letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    }
+    
+    /* Button class for the logo link */
+    .button-class {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* Menu Links Container */
+    .menu-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center;
+        gap: 10px; /* Space between each menu item */
+        margin-left: 20px;
+    }
+    
+    /* Menu Item Styling */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:  #f8f9fa; /* Default dark text */
+        font-size: 20px; /* Text size */
+        padding: 10px 10px; /* Add padding for clickable area */
+        border-radius: 10px; /* Rounded corners */
+    
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
+    }
+    
+    /* Icon Styling */
+    .menu-item i {
+        font-size: 25px; /* Standard font size for icons */
+        margin: 0px; /* Space between icon and text */
+        color: #f8f9fa; /* Default icon color */
+    }
+    
+    /* Text Styling */
+    .menu-item span {
+        display: none;
+    }
+    
+    /* Active Menu Item */
+    .menu-item.active {
+        color:  #333; /* White text for active item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+    }
+    
+    .menu-item.active i {
+        color:  #199576; /* White icon for active item */
+    }
+
+}
+
+.signin-container {
+  max-width: 400px;
+  margin: 100px auto 40px; /* pushed down for breathing space */
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+
+}
+
+
+.signin-container h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-align: center;
+  color: #136f63; /* deep teal */
+  margin-bottom: 35px;
+  letter-spacing: 1.5px;
+ 
+}
+
+.signin-message {
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.signin-message.error {
+  background-color: #fdecea;
+  color: #d32f2f;
+  border: 1px solid #f44336;
+}
+
+.signin-message.success {
+  background-color: #e6f4ea;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+.signin-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #555;
+  letter-spacing: 0.05em;
+}
+
+.signin-form input[type="text"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 30px;
+  border: 2px solid #c1d9d0;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f9fdfb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 3px;
+}
+
+.signin-form input[type="text"]:focus {
+  border-color: #136f63;
+  box-shadow: 0 0 12px rgba(19, 111, 99, 0.5);
+  background-color: #ffffff;
+  outline: none;
+}
+
+.signin-form button[type="submit"] {
+  width: 100%;
+  background: linear-gradient(135deg, #199576, #147a63);
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 16px 0;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(19, 111, 99, 0.45);
+  
+}
+
+.signin-form button[type="submit"]:hover {
+ box-shadow: 0 15px 25px rgba(20, 122, 99, 0.4);
+}
+
+.signin-footer-text {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-top: 25px;
+  letter-spacing: 0.03em;
+}
+
+.signin-footer-text a {
+  color: #136f63;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.signin-footer-text a:hover {
+  color: #0f5a4f;
+  text-decoration: underline;
+}
+
+/* Footer Text */
+.auth-footer-text {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.auth-footer-text a {
+  color: #199576;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.auth-footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.auth-footer a {
+  color: #0d6efd;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Small Screen */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 28px 20px;
+  }
+
+  .auth-title {
+    font-size: 1.7rem;
+  }
+}
