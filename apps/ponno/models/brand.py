@@ -6,7 +6,7 @@ from django.conf import settings  # To refer to your AUTH_USER_MODEL
 
 class Brand(models.Model):
     brand_name = models.CharField(max_length=100, unique=True)
-    brand_slug = models.SlugField(unique=True, blank=True)
+    brand_slug = models.SlugField(unique=True, blank=True, null=True)
     brand_created_at = models.DateTimeField(auto_now_add=True)
     brand_updated_at = models.DateTimeField(auto_now=True)
 

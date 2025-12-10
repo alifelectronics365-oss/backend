@@ -1,96 +1,143 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django import forms
-from apps.customer.models.account import User
 
+from .models import User
 
-# -------------------------
-# Custom User Creation Form
-# -------------------------
-class UserCreationForm(forms.ModelForm):
-    """
-    Form used in Django Admin to create new users.
-    """
-    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
+# Custom UserCreationForm to handle email_or_phone and password
+class CustomUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ('email_or_phone', 'role')
 
+# Custom UserChangeForm
+class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = User
-        fields = ("email_or_phone", "role")
+        fields = ('email_or_phone', 'role', 'is_active', 'is_staff')
 
-    def clean_password2(self):
-        p1 = self.cleaned_data.get("password1")
-        p2 = self.cleaned_data.get("password2")
+# Customize the UserAdmin
+class UserAdmin(BaseUserAdmin):
+    form = CustomUserChangeForm
+    add_form = CustomUserCreationForm
 
-        if p1 and p2 and p1 != p2:
-            raise forms.ValidationError("Passwords do not match")
-        return p2
-
-    def save(self, commit=True):
-        user = super().save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
-        if commit:
-            user.save()
-        return user
-
-
-# -------------------------
-# Custom User Change Form
-# -------------------------
-class UserChangeForm(forms.ModelForm):
-    """
-    Form used in Django Admin to update existing users.
-    """
-    class Meta:
-        model = User
-        fields = "__all__"
-
-
-# -------------------------
-# Custom User Admin
-# -------------------------
-class CustomUserAdmin(UserAdmin):
-    add_form = UserCreationForm
-    form = UserChangeForm
-    model = User
-
-    list_display = ("id", "email_or_phone", "role", "is_staff", "is_active")
-    list_filter = ("role", "is_staff", "is_active")
-
-    readonly_fields = ("last_login", "date_joined")
+    list_display = ('email_or_phone', 'role', 'is_staff', 'is_active')
+    list_filter = ('role', 'is_staff', 'is_active')
+    ordering = ('email_or_phone',)
+    search_fields = ('email_or_phone',)
 
     fieldsets = (
-        (None, {"fields": ("email_or_phone", "password")}),
-        ("Roles", {"fields": ("role",)}),
-        ("Permissions", {
-            "fields": (
-                "is_active",
-                "is_staff",
-                "is_superuser",
-                "groups",
-                "user_permissions",
-            )
-        }),
-        ("Important Dates", {"fields": ("last_login", "date_joined")}),
+        (None, {'fields': ('email_or_phone', 'password')}),
+        (_('Personal info'), {'fields': ('role',)}),
+        (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
 
     add_fieldsets = (
         (None, {
-            "classes": ("wide",),
+            'classes': ('wide',),
+            'fields': ('email_or_phone', 'role', 'password1', 'password2', 'is_staff', 'is_active'),
+        }),
+    )
+
+
+admin.site.register(User, UserAdmin)
+
+from django.contrib import admin
+from apps.customer.models.profile_info import ProfileInfo
+
+
+@admin.register(ProfileInfo)
+class ProfileInfoAdmin(admin.ModelAdmin):
+
+    # Columns shown in admin list view
+    list_display = (
+        "user",
+        "profile_name",
+        "is_profile_public",
+        "is_profile_verified",
+        "is_profile_featured",
+        "is_profile_suspended",
+        "is_profile_archived",
+        "profile_creation_time",
+    )
+
+    # Filters on right sidebar
+    list_filter = (
+        "is_profile_public",
+        "is_profile_verified",
+        "is_profile_featured",
+        "is_profile_suspended",
+        "is_profile_archived",
+        "profile_gender",
+        "profile_language",
+        "profile_creation_time",
+    )
+
+    # Search bar functionality
+    search_fields = (
+        "user__email_or_phone",
+        "profile_name",
+        "profile_gender",
+        "profile_language",
+        "profile_address",
+    )
+
+    # Field grouping inside edit page
+    fieldsets = (
+        ("User", {
+            "fields": ("user",)
+        }),
+
+        ("Profile Identity", {
+            "fields": ("profile_name",)
+        }),
+
+        ("Profile Details", {
             "fields": (
-                "email_or_phone",
-                "role",
-                "password1",
-                "password2",
-                "is_staff",
-                "is_active",
+                "profile_address",
+                "profile_gender",
+                "profile_language",
+                "profile_dob",
+            )
+        }),
+
+        ("Photos", {
+            "fields": (
+                "profile_photo",
+                "profile_cover_photo",
+            )
+        }),
+
+        ("Status", {
+            "fields": (
+                "is_profile_public",
+                "is_profile_verified",
+                "is_profile_featured",
+                "is_profile_suspended",
+                "is_profile_archived",
+            )
+        }),
+
+        ("Followers & Following", {
+            "fields": ("followers", "following"),
+        }),
+
+        ("Timestamps", {
+            "fields": (
+                "profile_creation_time",
+                "profile_updated_time",
             ),
         }),
     )
 
-    search_fields = ("email_or_phone",)
-    ordering = ("email_or_phone",)
+    # Make timestamps read-only
+    readonly_fields = (
+        "profile_creation_time",
+        "profile_updated_time",
+    )
 
-
-# Register the custom user admin
-admin.site.register(User, CustomUserAdmin)
+    # Allow selection of followers/following using admin multiselect UI
+    filter_horizontal = ("followers", "following")

@@ -59,5 +59,6 @@ def HomeView(request):
         'brands': Brand.objects.all(),
         'categories': Category.objects.all(),
         
+        
     }
     return render(request, "ponno/home.html", context)

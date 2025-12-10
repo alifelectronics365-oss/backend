@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 3px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -73,11 +73,6 @@ body {
 }
 
 /* Menu Links Container */
-
-/*
-
-
-*/
 
 .menu-links {
     display: flex;
@@ -125,14 +120,126 @@ body {
 }
 
 
- /* Search and navigation section */
+@media (max-width: 768px) {
+
+    .menu-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    
+    /* Navbar Styling */
+    .navbar-container {
+        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+        width: 100%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        
+        border-radius: 10px;
+        background-color: none; /* Educational site color */
+        color: #ffffff; /* White text for contrast */
+        font-weight: bold;
+        font-size: 17px; /* Standard font size for small devices */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+        margin-right: 3px;
+    }
+    
+    .navbar-brand {
+        font-size: 23px; /* Standard font size for brand name */
+        font-weight: 700; /* Bolder font */
+        color: inherit;
+        letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    }
+    
+    /* Button class for the logo link */
+    .button-class {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* Menu Links Container */
+    .menu-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center;
+        gap: 10px; /* Space between each menu item */
+        margin-left: 20px;
+    }
+    
+    /* Menu Item Styling */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:  #f8f9fa; /* Default dark text */
+        font-size: 20px; /* Text size */
+        padding: 10px 10px; /* Add padding for clickable area */
+        border-radius: 10px; /* Rounded corners */
+    
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
+    }
+    
+    /* Icon Styling */
+    .menu-item i {
+        font-size: 25px; /* Standard font size for icons */
+        margin: 0px; /* Space between icon and text */
+        color: #f8f9fa; /* Default icon color */
+    }
+    
+    /* Text Styling */
+    .menu-item span {
+        display: none;
+    }
+    
+    /* Active Menu Item */
+    .menu-item.active {
+        color:  #333; /* White text for active item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+    }
+    
+    .menu-item.active i {
+        color:  #199576; /* White icon for active item */
+    }
+
+}
+
+
+/* Search and navigation section */
 .search-container {
            
             background: #f8f9fa;
             padding: 15px 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             z-index: 1030;
-            margin-top: 5rem;
+            margin-top: 3rem;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -319,19 +426,23 @@ body {
     display: inline-block;
     padding: 3px 10px;
     border-radius: 12px;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 600;
     color: white;
     margin-right: 8px;
     user-select: none;
+    text-align: center;
   }
 
   .category-badge {
     background-color: #1e90ff;
+    text-align: center;
+    
   }
 
   .brand-badge {
     background-color: #ff4757;
+    text-align: center;
   }
 
 .btn-success {
@@ -362,13 +473,26 @@ body {
     font-size: 1rem;
   }
 
-  .stock {
-    font-weight: 700;
-    margin-top: auto;
-    margin-bottom: 6px;
-    font-size: 1rem;
-    color: #ff4757;
-  }
+.stock {
+  font-weight: 700;
+  margin-top: auto;
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #ff4757;
+  
+  /* make vertical stack */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;  /* space between items */
+  align-items: center; /* center horizontally */
+}
+.badges-row {
+  display: flex;
+  gap: 8px; /* space between badges */
+  justify-content: center; /* center horizontally */
+  margin-top: 6px;
+}
+
 
   /* Pagination */
   .pagination {

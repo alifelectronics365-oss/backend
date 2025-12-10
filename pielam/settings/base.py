@@ -21,12 +21,16 @@ INSTALLED_APPS = [
 
     # Installed Apps
     'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt',
 
     # My Appa
     "apps.ponno",
     "apps.customer",
     "apps.kobutor",
     "apps.core",
+    "apps.tomal",
+    "apps.notify",
    
 ]
 

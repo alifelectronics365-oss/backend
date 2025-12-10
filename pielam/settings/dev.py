@@ -29,6 +29,8 @@ EMAIL_USE_TLS = True      # TLS ON
 EMAIL_USE_SSL = False     # SSL must be OFF
 
 EMAIL_HOST_USER = 'alifelectronics365@gmail.com'
-EMAIL_HOST_PASSWORD = 'hoko wuop ermh wuvn'   # NOT your Gmail login password
+EMAIL_HOST_PASSWORD = 'neaf fmif zpcj kzvw'   # NOT your Gmail login password
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# neaf fmif zpcj kzvw

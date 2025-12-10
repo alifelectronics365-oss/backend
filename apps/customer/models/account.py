@@ -1,11 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
-from apps.customer.models.validators import email_or_phone_validator
+from apps.customer.validators import email_or_phone_validator
 from django.utils import timezone
+from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email_or_phone, password=None, role="user", **extra_fields):
+
+    def create_user(self, email_or_phone, password=None, role="customer", **extra_fields):
         if not email_or_phone:
             raise ValueError("Users must have an email or phone number")
 
@@ -23,6 +26,12 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
 
+        # Safety checks
+        if extra_fields.get("is_staff") is not True:
+            raise ValueError("Superuser must have is_staff=True.")
+        if extra_fields.get("is_superuser") is not True:
+            raise ValueError("Superuser must have is_superuser=True.")
+
         return self.create_user(email_or_phone, password, **extra_fields)
 
 
@@ -33,13 +42,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         ("customer", "Customer"),
     )
 
-    # Accept email or phone
     email_or_phone = models.CharField(
-    max_length=100,
-    unique=True,
-    validators=[email_or_phone_validator],
+        max_length=100,
+        unique=True,
+        validators=[email_or_phone_validator],
     )
-    # User role
+
     role = models.CharField(
         max_length=20,
         choices=ROLE_CHOICES,
@@ -53,14 +61,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = "email_or_phone"
-    REQUIRED_FIELDS = []  # only email_or_phone is required
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.email_or_phone
 
     # Helpers
+    @property
     def is_email(self):
         return "@" in self.email_or_phone
 
+
     def is_phone(self):
-        return self.email_or_phone.isdigit()
+        return self.email_or_phone.replace("+", "").isdigit()

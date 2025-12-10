@@ -1,14 +1,22 @@
 from django.urls import path
-from apps.customer.views.signup import signup_view
+from apps.customer.views.signup import SignUpView
+from apps.customer.views.signin import SignInView
+from apps.customer.views.profile import ProfileView
+from apps.customer.views.logout import LogoutView
+from apps.customer.views.profile_edit import EditProfileView
+from apps.customer.views.profile_settings import ProfileSettingsView
 
-# Import other views similarly if needed
-
-
-app_name = "customer"  # Namespace for URL names
+app_name = "customer"
 
 urlpatterns = [
-    path('signup/', signup_view, name='signup'),
-   # path('signin/', views.signin_view, name='signin'),
-   # path('profile/', views.profile_view, name='profile'),
-   # path('logout/', views.logout_view, name='logout'),
+    path('signup/', SignUpView, name='signup'),
+    path('signin/', SignInView, name='signin'),
+     # Logout URL
+    path('logout/', LogoutView, name='logout'),
+
+    path('profile/', ProfileView, name='profile'),  # <-- Add this line
+    path("edit_profile/", EditProfileView, name="edit_profile"),
+    path("profile_settings/", ProfileSettingsView, name="profile_settings"),
+
+    
 ]

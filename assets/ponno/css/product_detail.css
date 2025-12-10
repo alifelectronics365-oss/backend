@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 3px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -73,11 +73,6 @@ body {
 }
 
 /* Menu Links Container */
-
-/*
-
-
-*/
 
 .menu-links {
     display: flex;
@@ -125,120 +120,121 @@ body {
 }
 
 
- /* Search and navigation section */
-.search-container {
-           
-            background: #f8f9fa;
-            padding: 15px 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            z-index: 1030;
-            margin-top: 5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+@media (max-width: 768px) {
 
+    .menu-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    
+    /* Navbar Styling */
+    .navbar-container {
+        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+        width: 100%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        
+        border-radius: 10px;
+        background-color: none; /* Educational site color */
+        color: #ffffff; /* White text for contrast */
+        font-weight: bold;
+        font-size: 17px; /* Standard font size for small devices */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+        margin-right: 3px;
+    }
+    
+    .navbar-brand {
+        font-size: 23px; /* Standard font size for brand name */
+        font-weight: 700; /* Bolder font */
+        color: inherit;
+        letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    }
+    
+    /* Button class for the logo link */
+    .button-class {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* Menu Links Container */
+    .menu-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center;
+        gap: 10px; /* Space between each menu item */
+        margin-left: 20px;
+    }
+    
+    /* Menu Item Styling */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:  #f8f9fa; /* Default dark text */
+        font-size: 20px; /* Text size */
+        padding: 10px 10px; /* Add padding for clickable area */
+        border-radius: 10px; /* Rounded corners */
+    
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
+    }
+    
+    /* Icon Styling */
+    .menu-item i {
+        font-size: 25px; /* Standard font size for icons */
+        margin: 0px; /* Space between icon and text */
+        color: #f8f9fa; /* Default icon color */
+    }
+    
+    /* Text Styling */
+    .menu-item span {
+        display: none;
+    }
+    
+    /* Active Menu Item */
+    .menu-item.active {
+        color:  #333; /* White text for active item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+    }
+    
+    .menu-item.active i {
+        color:  #199576; /* White icon for active item */
+    }
 
-.search-input {
-            flex-grow: 1;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-radius: 25px;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .btn-search {
-            background-color: #0d6efd;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            cursor: pointer;
-            border-radius: 5px;
-            flex-shrink: 0;
-            font-size: 1rem;
-        }
-
-        .search-results-box {
-    position: absolute;
-    top: 155px;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-radius: 12px;
-    padding: 10px 0;
-    max-height: 380px;
-    overflow-y: auto;
-    z-index: 2000;
-    display: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
-    outline: none;
-}
-
-.search-results-box.show {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.search-item {
-    padding: 12px 18px;
-    cursor: pointer;
-    border-bottom: 1px solid #f2f2f2;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    outline: none;
-}
-
-.search-item:last-child {
-    border-bottom: none;
-}
-
-.search-item img {
-    width: 45px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-.search-item .info {
-    display: flex;
-    flex-direction: column;
-    color: #222;
-    font-size: 0.95rem;
-}
-
-.search-item .info .title {
-    font-weight: 600;
-    margin-bottom: 3px;
-}
-
-.search-item .info .details {
-    color: #666;
-    font-size: 0.85rem;
-}
-
-.search-item:hover,
-.search-item[aria-selected="true"] {
-    background: #f5f7ff;
-}
-
-.no-results {
-    text-align: center;
-    padding: 15px;
-    color: #777;
-    font-size: 0.95rem;
 }
 
 
 .categories-container {
-  max-width: 1200px;
-  margin-top: 5px;
+  max-width: 1000px;
+  margin-top: 4rem;
   padding: 0 15px;
 }
 
@@ -398,134 +394,18 @@ body {
           background: #e65b50;
         }
 
-@media (max-width: 600px) {
-.menu-top {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        z-index: 1000;
-        border-radius: 10px;
-    }
-    
-    /* Navbar Styling */
-    .navbar-container {
-        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
-        width: 100%;
-    }
-    
-    .menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    /* Logo Section */
-    .logo-section {
-        display: flex;
-        align-items: center;
-        padding: 5px 7px;
-        border-radius: 10px;
-        background-color: none; /* Educational site color */
-        color: #ffffff; /* White text for contrast */
-        font-weight: bold;
-        font-size: 17px; /* Standard font size for small devices */
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    }
-    
-    .logo-container {
-        display: flex;
-        align-items: center;
-    }
-    
-    .navbar-logo {
-        height: 35px;
-        margin-right: 3px;
-    }
-    
-    .navbar-brand {
-        font-size: 23px; /* Standard font size for brand name */
-        font-weight: 700; /* Bolder font */
-        color: inherit;
-        letter-spacing: 1px; /* Slight letter spacing for a clean look */
-    }
-    
-    /* Button class for the logo link */
-    .button-class {
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    /* Menu Links Container */
-    .menu-links {
-        display: flex;
-        justify-content: center; /* Center the links */
-        align-items: center;
-        gap: 10px; /* Space between each menu item */
-        margin-left: 20px;
-    }
-    
-    /* Menu Item Styling */
-    .menu-item {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        color:  #f8f9fa; /* Default dark text */
-        font-size: 20px; /* Text size */
-        padding: 10px 10px; /* Add padding for clickable area */
-        border-radius: 10px; /* Rounded corners */
-    
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
-    }
-    
-    /* Icon Styling */
-    .menu-item i {
-        font-size: 25px; /* Standard font size for icons */
-        margin: 0px; /* Space between icon and text */
-        color: #f8f9fa; /* Default icon color */
-    }
-    
-    /* Text Styling */
-    .menu-item span {
-        display: none;
-    }
-    
-    /* Active Menu Item */
-    .menu-item.active {
-        color:  #333; /* White text for active item */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
-    }
-    
-    .menu-item.active i {
-        color:  #199576; /* White icon for active item */
-    }
-.search-container {
-           
-            background: #f8f9fa;
-            padding: 15px 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            z-index: 1000;
-            margin-top: 3.5rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-    .search-input {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-    }
 
-    .btn-search {
-        padding: 8px 18px;
-        font-size: 0.8rem;
-    }
 
+
+@media (max-width: 768px) {
+
+
+  
+.categories-container {
+ 
+  margin-top: 4rem;
+  
+}
     /* Category section */
     .categories-scroll {
         padding-bottom: 4px;
