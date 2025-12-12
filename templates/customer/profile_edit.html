@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static 'customer/css/profile_edit.css'%}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Edit Profile - {{ profile_info.get_profile_name }}</title>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="menu-top">
+        <div class="container-fluid navbar-container">
+            <div class="menu">
+                <!-- Logo Section -->
+                <div class="logo-section">
+                    <a href="#" class="button-class">
+                        <div class="logo-container">
+                            <span class="navbar-brand">PIELAM</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Menu Links -->
+                <div class="menu-links">
+                    <a href="{% url 'ponno:home' %}" class="menu-item icon-button" aria-label="Home">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="{% url 'notify:notification' %}" class="menu-item icon-button">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                    <a href="{% url 'customer:profile' %}" class="menu-item icon-button" aria-label="Profile">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile">
+        <div class="profile-left">
+            <div class="vaipen-card-infos">
+                <h2>Dashboard</h2>
+                <hr /><br />
+                <div class="vaipen-card-info">
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Following:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ followings_count }}</p></div>
+                    </div>
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Followers:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ followers_count }}</p></div>
+                    </div>
+
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Products Listed:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ products_listed_count }}</p></div>
+                    </div>
+
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Active Products:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ active_products_count }}</p></div>
+                    </div>
+
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Brands Created:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ brands_count }}</p></div>
+                    </div>
+
+                    <div class="vaipen-card-info-row">
+                        <div class="vaipen-card-info-label"><p>Categories Created:</p></div>
+                        <div class="vaipen-card-info-value"><p>{{ categories_count }}</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-middle">
+            <div class="profile-center">
+                <h2>Edit Profile</h2>
+                <hr />
+
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <p class="message {{ message.tags }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <form method="POST" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+
+                    <!-- Profile Name -->
+                    <label for="profile_name">Profile Name</label>
+                    <input type="text" name="profile_name" id="profile_name" value="{{ profile_info.profile_name }}" required />
+
+                    <!-- Profile Address (Bio) -->
+                    <label for="profile_address">Bio / Address</label>
+                    <textarea name="profile_address" id="profile_address" rows="4">{{ profile_info.profile_address }}</textarea>
+
+                    <!-- Profile Gender -->
+                    <label for="profile_gender">Gender</label>
+                    <select name="profile_gender" id="profile_gender">
+                        <option value="" {% if not profile_info.profile_gender %}selected{% endif %}>Select Gender</option>
+                        <option value="Male" {% if profile_info.profile_gender == "Male" %}selected{% endif %}>Male</option>
+                        <option value="Female" {% if profile_info.profile_gender == "Female" %}selected{% endif %}>Female</option>
+                        <option value="Other" {% if profile_info.profile_gender == "Other" %}selected{% endif %}>Other</option>
+                    </select>
+
+                    <!-- Profile DOB -->
+                    <label for="profile_dob">Date of Birth</label>
+                    <input type="date" name="profile_dob" id="profile_dob" value="{{ profile_info.profile_dob|date:'Y-m-d' }}" />
+
+                    <!-- Profile Language -->
+                    <label for="profile_language">Language</label>
+                    <input type="text" name="profile_language" id="profile_language" value="{{ profile_info.profile_language }}" />
+
+                    <!-- Profile Photo -->
+                    <label for="profile_photo">Profile Photo</label>
+                    <br />
+                    {% if profile_info.profile_photo %}
+                    <img src="{{ profile_info.get_profile_photo_url }}" alt="Current Profile Photo" class="profile-picture" style="max-width:150px; border-radius: 50%;" />
+                    <br />
+                    {% endif %}
+                    <input type="file" name="profile_photo" id="profile_photo" accept="image/*" />
+
+                    <!-- Cover Photo -->
+                    <label for="profile_cover_photo">Cover Photo</label>
+                    <br />
+                    {% if profile_info.profile_cover_photo %}
+                    <img src="{{ profile_info.get_profile_cover_photo_url }}" alt="Current Cover Photo" class="profile-cover-photo" style="max-width:300px; border-radius: 8px;" />
+                    <br />
+                    {% endif %}
+                    <input type="file" name="profile_cover_photo" id="profile_cover_photo" accept="image/*" />
+
+                    <br /><br />
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <a href="{% url 'customer:profile' %}" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

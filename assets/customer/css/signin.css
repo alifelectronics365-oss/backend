@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e9ecef; /* A light gray background */
+}
+
+.menu-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+/* Navbar Styling */
+.navbar-container {
+    background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+   
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger text for brand name */
+    font-weight: 700; /* Bolder font */
+    color: inherit;
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Button class for the logo link */
+.button-class {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Menu Links Container */
+
+.menu-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    gap: 30px; /* Space between each menu item */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:  #f8f9fa; /* Default dark text */
+    font-size: 18px; /* Text size */
+    padding: 12px 18px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Icon Styling */
+.menu-item i {
+    font-size: 22px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #f8f9fa; /* Default icon color */
+   
+}
+
+/* Text Styling */
+.menu-item span {
+    font-size: 18px; /* Font size for menu text */
+    font-weight: 600; /* Bolder text for emphasis */
+}
+
+/* Active Menu Item */
+.menu-item.active {
+   
+    color:  black; /* White text for active item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+}
+
+.menu-item.active i {
+    color:  #199576; /* White icon for active item */
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+/* Navbar Styling */
+.navbar-container {
+    background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+   
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger text for brand name */
+    font-weight: 700; /* Bolder font */
+    color: inherit;
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Button class for the logo link */
+.button-class {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Menu Links Container */
+
+.menu-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    gap: 30px; /* Space between each menu item */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:  #f8f9fa; /* Default dark text */
+    font-size: 18px; /* Text size */
+    padding: 12px 18px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Icon Styling */
+.menu-item i {
+    font-size: 22px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #f8f9fa; /* Default icon color */
+   
+}
+
+/* Text Styling */
+.menu-item span {
+    font-size: 18px; /* Font size for menu text */
+    font-weight: 600; /* Bolder text for emphasis */
+}
+
+/* Active Menu Item */
+.menu-item.active {
+   
+    color:  black; /* White text for active item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+}
+
+.menu-item.active i {
+    color:  #199576; /* White icon for active item */
+}
+
+}
+
+/* Main container styling */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #f0f2f5;
+}
+
+/* Form Section */
+.form-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    max-width: 420px;
+    width: 100%;
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+}
+
+/* Form container */
+.form-container {
+    width: 100%;
+}
+
+/* Form Title */
+.form-title {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+}
+
+/* Message container */
+.message-container {
+    margin-bottom: 1rem;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.message.error {
+    background-color: #ffe5e5;
+    color: #d93025;
+}
+
+.message.success {
+    background-color: #e6f4ea;
+    color: #188038;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+/* Input container for icon + input */
+.input-container {
+    position: relative;
+}
+
+/* Icons */
+.input-container i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.625rem 0.75rem 0.625rem 36px; /* left padding for icon */
+    border: 1.8px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #000dff;
+    box-shadow: 0 0 8px rgba(0, 13, 255, 0.3);
+}
+
+/* Feedback messages below inputs */
+#email_or_phone-feedback,
+#password-feedback,
+#confirm-password-feedback {
+    margin-top: 0.3rem;
+    font-size: 0.875rem;
+    min-height: 1.2rem;
+}
+
+/* Buttons */
+.form-actions {
+    margin-top: 1.5rem;
+}
+
+button.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #000dff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn:hover,
+button.btn:focus {
+    background-color: #2f3cff;
+    outline: none;
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 1rem 0;
+    user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-section {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .form-title {
+        font-size: 1.5rem;
+    }
+}

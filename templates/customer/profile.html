@@ -1,0 +1,226 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'customer/css/profile.css'%}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>{{ profile_info.get_profile_name }} </title>
+</head>
+
+<body>
+<!-- Navigation Bar -->
+<div class="menu-top">
+    <div class="container-fluid navbar-container">
+        <div class="menu">
+            <!-- Logo Section -->          
+            <div class="logo-section">
+                <a href="#" class="button-class">
+                    <div class="logo-container">
+                        <span class="navbar-brand"> PIELAM </span>
+                    </div>
+                </a>
+            </div>     
+            
+       
+            <!-- Menu Links -->
+            <div class="menu-links">
+                <a href="{% url 'ponno:home' %}" class="menu-item icon-button " aria-label="Home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{% url 'notify:notification' %}" class="menu-item icon-button ">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+               
+                <a href="{% url 'customer:profile' %}" class="menu-item icon-button  aria-label="Profile">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Profile</span>
+                </a>            
+            </div>               
+        </div>
+    </div>
+</div>
+
+   
+<div class="profile">
+        
+    <div class="profile-left">
+    <div class="vaipen-card-infos">
+        <h2> Dashboard </h2>
+        <hr><br>
+        <div class="vaipen-card-info">
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Following: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ followings_count }}</p></div>
+            </div>
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Followers: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ followers_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Products Listed: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ products_listed_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Active Products: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ active_products_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Brands Created: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ brands_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Categories Created: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ categories_count }}</p></div>
+            </div>
+        </div>
+    </div>
+
+
+                         
+    </div>
+        
+    
+<div class="profile-middle">
+
+    <div class="profile-center">
+
+        <!-- Cover Photo -->
+        <div class="profile-cover-picture">
+            <img src="{{ profile_info.get_profile_cover_photo_url }}" 
+                 alt="Cover Photo" 
+                 class="profile-cover-photo">
+        </div>
+
+        <!-- Profile Container -->
+        <div class="profile-container">
+
+            <!-- Profile Photo -->
+            <div class="profile-photo">
+                <img src="{{ profile_info.get_profile_photo_url }}"
+                     alt="Profile Photo"
+                     class="profile-picture">
+            </div>
+
+            <!-- Profile Info -->
+            <div class="profile-info">
+                <a href="#" class="profile-name">
+                    {{ profile_info.get_profile_name }}
+                    {% if profile_info.is_profile_verified %}
+                        <span class="verified-icon">
+                            <i class="fa fa-check-circle"></i>
+                        </span>
+                    {% endif %}
+                </a>
+
+                <p class="profile-username">{{ request.user.email_or_phone }}</p>
+            </div>
+
+        </div>
+
+        <!-- Bio -->
+        <div id="profile-bio-container">
+            <div id="profile-bio" class="profile-bio">
+                <p id="bio-text" class="bio-text">
+                    {{ profile_info.get_profile_bio }}
+                </p>
+            </div>
+
+            <!-- Profile Action Links -->
+            <div class="profile-update">
+                <a href="{% url 'customer:edit_profile' %}" class="profile-action edit-profile">
+                    <i class="fas fa-user-edit"></i> Edit Profile
+                </a>
+                <a href="{% url 'customer:profile_settings' %}" class="profile-action settings">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+
+                <a href="{% url 'customer:logout' %}" class="profile-action about">Logout</a>
+            </div>
+             
+            
+        </div>
+
+        {% if not profile_info.is_profile_verified %}
+            <div class="account-verification">
+               
+            </div>
+        {% else %}
+            <div class="product-upload-link">
+                <a href="{% url 'ponno:product_upload' %}" class="upload-product-button" onclick="document.getElementById('product-upload-form').style.display='block'; return false;">
+                    <i class="fas fa-upload"></i> Upload Product
+                </a>
+            </div>
+        {% endif %}
+            
+
+        <!-- General Info -->
+        <h2 class="general-info-heading">General Information</h2>
+        <hr>
+
+        <div class="general-info">
+
+            <div class="general-info-row">
+                <div class="general-info-label">Account Category:</div>
+                <div class="general-info-value">{{ profile_info.get_profile_type }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Gender:</div>
+                <div class="general-info-value">{{ profile_info.get_profile_gender }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Date of Birth:</div>
+                <div class="general-info-value">{{ profile_info.get_profile_dob }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Age:</div>
+                <div class="general-info-value">{{ profile_info.get_age }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Language:</div>
+                <div class="general-info-value">{{ profile_info.get_profile_language }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Account Creation Time:</div>
+                <div class="general-info-value">{{ profile_info.profile_creation_time }}</div>
+            </div>
+
+            <div class="general-info-row">
+                <div class="general-info-label">Last Updated Time:</div>
+                <div class="general-info-value">{{ profile_info.profile_updated_time }}</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    
+        <div class="container">
+            
+            
+        </div>   
+    </div>
+</div>                
+
+    
+
+</body>
+</html>

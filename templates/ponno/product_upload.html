@@ -1,0 +1,198 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'customer/css/profile.css'%}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>{{ profile_info.get_profile_name }}</title>
+</head>
+
+<body>
+
+
+<!-- Navigation Bar -->
+<div class="menu-top">
+    <div class="container-fluid navbar-container">
+        <div class="menu">
+            <!-- Logo Section -->
+           
+            <div class="logo-section">
+                <a href="/" class="button-class">
+                    <div class="logo-container">
+                        
+                        <span class="navbar-brand"> VAIPEN </span>
+                    </div>
+                </a>
+            </div>            
+
+            
+    
+            <!-- Menu Links -->
+            <div class="menu-links">
+                <a href="{% url 'ponno:home' %}" class="menu-item icon-button " aria-label="Home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="{% url 'notify:notification' %}" class="menu-item icon-button ">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+                <a href="{% url 'customer:profile' %}" class="menu-item icon-button  aria-label="Profile">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Profile</span>
+                </a>            
+            </div>               
+        </div>
+    </div>
+</div>
+
+
+        
+<div class="profile">
+        
+    <div class="profile-left">
+    <div class="vaipen-card-infos">
+        <h2> Dashboard </h2>
+        <hr><br>
+        <div class="vaipen-card-info">
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Following: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ followings_count }}</p></div>
+            </div>
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Followers: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ followers_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Products Listed: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ products_listed_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Active Products: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ active_products_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Brands Created: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ brands_count }}</p></div>
+            </div>
+
+            <div class="vaipen-card-info-row">
+                <div class="vaipen-card-info-label"><p> Categories Created: </p></div>
+                <div class="vaipen-card-info-value"><p>{{ categories_count }}</p></div>
+            </div>
+        </div>
+    </div>
+
+
+                         
+    </div>
+        
+    
+<div class="profile-middle">
+
+    <div class="profile-center">
+        <!-- existing profile info HTML here -->
+
+        <!-- Verification -->
+        {% if not profile_info.is_profile_verified %}
+            <div class="account-verification">
+                <a href="#" class="profile-verification">Verify Account</a>
+            </div>
+        {% else %}
+            <div class="product-upload-link">
+                <a href="{% url 'ponno:product_upload' %}" class="upload-product-button" onclick="document.getElementById('product-upload-form').style.display='block'; return false;">
+                    <i class="fas fa-upload"></i> Upload Product
+                </a>
+            </div>
+
+            <!-- Product Upload Form (initially hidden) -->
+            <div id="product-upload-form" style="display:none; margin-top:20px;">
+                <form method="POST" enctype="multipart/form-data" action="{% url 'ponno:product_upload' %}">
+                    {% csrf_token %}
+                    
+                    <div>
+                        <label for="id_product_name">Product Name:</label>
+                        <input type="text" name="product_name" id="id_product_name" required>
+                    </div>
+                    
+                    <div>
+                        <label for="id_brand">Brand:</label>
+                        <select name="brand" id="id_brand">
+                            <option value="" selected>---------</option>
+                            {% for brand in brands %}
+                                <option value="{{ brand.id }}">{{ brand.brand_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="id_category">Category:</label>
+                        <select name="category" id="id_category">
+                            <option value="" selected>---------</option>
+                            {% for category in categories %}
+                                <option value="{{ category.id }}">{{ category.category_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="id_description">Description:</label>
+                        <textarea name="description" id="id_description"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="id_image">Product Image:</label>
+                        <input type="file" name="image" id="id_image">
+                    </div>
+
+                    <div>
+                        <label for="id_brand_price">Brand Price:</label>
+                        <input type="number" step="0.01" name="brand_price" id="id_brand_price">
+                    </div>
+
+                    <div>
+                        <label for="id_buying_price">Buying Price:</label>
+                        <input type="number" step="0.01" name="buying_price" id="id_buying_price" required>
+                    </div>
+
+                    <div>
+                        <label for="id_selling_price">Selling Price:</label>
+                        <input type="number" step="0.01" name="selling_price" id="id_selling_price">
+                    </div>
+
+                    <div>
+                        <label for="id_stock">Stock:</label>
+                        <input type="number" name="stock" id="id_stock" value="0" min="0">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Upload Product</button>
+                </form>
+            </div>
+        {% endif %}
+        
+        <!-- rest of your general info etc. -->
+
+    </div>
+</div>
+
+    
+        <div class="container">
+            
+            
+        </div>   
+    </div>
+</div>                
+
+    
+
+</body>
+</html>

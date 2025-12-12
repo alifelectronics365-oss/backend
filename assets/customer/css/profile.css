@@ -1,0 +1,2185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e9ecef; /* A light gray background */
+}
+
+.menu-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #e9ecef; /* A light gray background */
+}
+
+.menu-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+/* Navbar Styling */
+.navbar-container {
+    background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;
+   
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger text for brand name */
+    font-weight: 700; /* Bolder font */
+    color: inherit;
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Button class for the logo link */
+.button-class {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Menu Links Container */
+
+.menu-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    gap: 30px; /* Space between each menu item */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:  #f8f9fa; /* Default dark text */
+    font-size: 18px; /* Text size */
+    padding: 12px 18px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Icon Styling */
+.menu-item i {
+    font-size: 22px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #f8f9fa; /* Default icon color */
+   
+}
+
+/* Text Styling */
+.menu-item span {
+    font-size: 18px; /* Font size for menu text */
+    font-weight: 600; /* Bolder text for emphasis */
+}
+
+/* Active Menu Item */
+.menu-item.active {
+   
+    color:  black; /* White text for active item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+}
+
+.menu-item.active i {
+    color:  #199576; /* White icon for active item */
+}
+
+
+@media (max-width: 768px) {
+
+    .menu-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    
+    /* Navbar Styling */
+    .navbar-container {
+        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+        width: 100%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        
+        border-radius: 10px;
+        background-color: none; /* Educational site color */
+        color: #ffffff; /* White text for contrast */
+        font-weight: bold;
+        font-size: 17px; /* Standard font size for small devices */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo {
+        height: 35px;
+        margin-right: 3px;
+    }
+    
+    .navbar-brand {
+        font-size: 23px; /* Standard font size for brand name */
+        font-weight: 700; /* Bolder font */
+        color: inherit;
+        letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    }
+    
+    /* Button class for the logo link */
+    .button-class {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* Menu Links Container */
+    .menu-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center;
+        gap: 10px; /* Space between each menu item */
+        margin-left: 20px;
+    }
+    
+    /* Menu Item Styling */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:  #f8f9fa; /* Default dark text */
+        font-size: 20px; /* Text size */
+        padding: 10px 10px; /* Add padding for clickable area */
+        border-radius: 10px; /* Rounded corners */
+    
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
+    }
+    
+    /* Icon Styling */
+    .menu-item i {
+        font-size: 25px; /* Standard font size for icons */
+        margin: 0px; /* Space between icon and text */
+        color: #f8f9fa; /* Default icon color */
+    }
+    
+    /* Text Styling */
+    .menu-item span {
+        display: none;
+    }
+    
+    /* Active Menu Item */
+    .menu-item.active {
+        color:  #333; /* White text for active item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+    }
+    
+    .menu-item.active i {
+        color:  #199576; /* White icon for active item */
+    }
+
+}
+
+
+/* Flex container for main sections */
+.profile {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3rem; /* Adjusted to accommodate the fixed menu */
+    
+}
+
+/* Styling for each main section */
+.profile-left, .profile-middle {
+    
+    margin-bottom: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    
+}
+
+.profile-left {
+    width: 30%;
+    margin-top: 1%;
+        
+}
+
+.vaipen-card-infos {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd; /* Border around the section */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.vaipen-card-infos h2 {
+    width: 100%;
+    text-align: center;    
+}
+
+/* Profile School Design */
+.vaipen-card-info {
+    margin-bottom: 20px;
+    border-radius: 5px; /* Rounded corners for each school */
+    
+}
+.vaipen-card-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9; /* Background color */
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vaipen-card-info-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* Dark text color for contrast */
+}
+
+.vaipen-card-info-value {
+    font-size: 16px;
+    color: #555; /* Slightly lighter color for the value */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for the value */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+.profile-middle {
+    width: 70%;
+    margin-top: 1%;
+
+}
+
+
+/* Profile Section */
+
+
+.profile-center {
+    text-align: center;
+}
+.profile-cover-picture {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Prevents the image from overflowing */
+}
+
+.profile-cover-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block; /* Ensures the image behaves as a block element */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the left horizontally */
+    margin: -50px auto 20px;
+    position: relative;
+}
+
+
+.profile-photo {
+    position: relative;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Stack name and username vertically */
+    margin-left: 20px; /* Spacing between the profile photo and info */
+    margin-top: 40px; /* Add more top margin to move it down */
+    text-align: left;
+}
+.profile-info a {
+    font-size: 24px;
+    font-weight: bold;
+    color:  black;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.verified-icon[title] {
+    position: relative;
+    cursor: pointer;
+}
+
+.verified-icon[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.profile-username {
+    font-size: 18px;
+    color: #777;
+}
+.profile-bio {
+    margin: 0;
+    color: black;
+    font-size: 1rem;
+}
+
+/* Container styling */
+/* Container styling */
+.profile-update {
+    display: flex;
+    justify-content: space-between; /* Ensure space between the two buttons */
+    gap: 2rem; /* Spacing between the two buttons */
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: 1.5rem;
+    font-family: 'Roboto';
+}
+
+/* Common styling for both links */
+.profile-action {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text and icon */
+    width: 50%; /* Ensure each link takes up 50% width */
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Edit Profile link styling */
+.profile-action.edit-profile {
+    color: #ffffff;
+    background-color:  #0056b3; /* Bootstrap primary blue */
+}
+
+.profile-action.edit-profile:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Settings link styling */
+.profile-action.settings {
+    color: #ffffff;
+    background-color:#0056b3; /* Bootstrap success green */
+}
+
+.profile-action.settings:hover {
+    background-color:#0056b3; /* Darker green on hover */
+}
+
+.profile-action.about {
+    color: #ffffff;
+    background-color:#0056b3; /* Bootstrap success green */
+}
+
+
+.profile-action.about:hover {
+    background-color: whitesmoke; /* Darker green on hover */
+    color: #0056b3;
+}
+
+
+ /* Container Styling */
+ .account-verification {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Verify Account Button Styling */
+.profile-verification {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for 'Verify Account' */
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    text-transform: uppercase;
+   
+}
+
+/* Hover Effects */
+
+.profile-verification:active {
+    transform: translateY(0); /* Slightly resets when clicked */
+}
+
+
+.profile-action-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Slightly increased spacing for better separation */
+    padding: 24px; /* Spacious padding for structure */
+    background-color: #fefefe; /* Soft white background */
+    border-radius: 12px; /* Increased roundness for a modern touch */
+    
+    justify-content: center; /* Centered layout */
+    text-align: center;
+}
+
+.profile-action-item {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600; /* Bold font for emphasis */
+    color: #0056b3; /* White text for dark background */
+    background-color: whitesmoke; /* Deep blue background */
+    padding: 16px; /* Added padding for better click area */
+    border-radius: 10px; /* Rounded corners for smooth visuals */
+    cursor: pointer;
+    
+}
+
+
+
+
+.profile-action-link {
+    display: block; /* Block layout for better alignment */
+    text-decoration: none;
+    font-size: 18px; /* Larger font size for readability */
+    font-weight: 600; /* Bold font for emphasis */
+    color: #0056b3; /* White text */
+    padding: 10px 14px;
+    border-radius: 8px; /* Rounded corners for buttons */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for card depth */    
+
+}
+
+.profile-action-link:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+
+
+@media (min-width: 768px) {
+    .profile-action-links {
+        justify-content: space-evenly; /* Distribute items evenly on medium screens */
+        gap: 24px; /* Wider spacing */
+    }
+
+    .profile-action-item {
+        flex: 1 0 45%; /* Two items per row */
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile-action-item {
+        flex: 1 0 30%; /* Three items per row on large screens */
+    }
+}
+
+.form-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px; /* Adjust the position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Icon color */
+}
+
+.form-group input {
+    padding: 10px 40px; /* Add padding to the left for the icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+.form-group input:focus {
+    border-color: #1378DA;
+    outline: none;
+}
+.form-actions {
+    width: 100%;
+}
+
+.btn {
+    width: 100%; /* Make the button take up the full width */
+    padding: 12px 0; /* Adjust the padding for consistent height */
+    font-size: 1rem;
+    background-color: #1378DA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure the padding doesn't affect the width */
+}
+
+.btn:hover {
+    background-color: #0b5fa5;
+}
+
+
+.profile-action-item i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Profile Edit Section Styling */
+.profile-edit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+}
+
+.profile-edit-section input[type="text"],
+.profile-edit-section input[type="email"],
+.profile-edit-section input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-section button {
+    padding: 12px 30px;
+    
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-edit-section button:hover {
+    background-color: #155f44; /* Darker green on hover */
+}
+
+/* Additional Section for Notifications or Messages */
+.profile-notifications {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.profile-notifications h3 {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-notifications .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notifications .notification-item:last-child {
+    border-bottom: none;
+}
+
+.profile-notifications .notification-item .notification-message {
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-notifications .notification-item .notification-action {
+    color: #199576;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile-notifications .notification-item .notification-action:hover {
+    color: #155f44; /* Darker green on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+
+    .profile-left {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 1rem;
+    }
+
+    .profile-middle {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 1rem;
+    }
+
+    .profile-action-links {
+        flex-direction: column;
+        gap: 15px; /* Adjust the gap for mobile screens */
+    }
+
+    .profile-action-item {
+        width: 100%; /* Ensure the action items take up full width on mobile */
+        padding: 12px 20px;
+    }
+
+    .profile-edit-section {
+        padding: 1.5rem;
+    }
+
+    .profile-edit-section input,
+    .profile-edit-section button {
+        width: 100%; /* Full width for inputs and button on small screens */
+    }
+}
+
+
+/* General Information Section Styling */
+.general-info-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.general-info {
+    background-color: #f8f9fa; /* Light background for the section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Each Row Styling */
+.general-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border between rows */
+    align-items: center;
+}
+
+.general-info-row:last-child {
+    border-bottom: none; /* Remove border from the last row */
+}
+
+/* Label Styling */
+.general-info-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    flex-basis: 40%;
+}
+
+/* Value Styling */
+.general-info-value {
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff; /* White background for contrast */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for value */
+    text-align: right;
+    flex-basis: 55%;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    
+    .profile {
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3em; /* Adjusted to accommodate the fixed menu */
+        
+    }
+    
+    .profile-middle {
+        width: 100%;
+        
+    }
+
+    .profile-cover-photo {
+        height: 150px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info a {
+        font-size: 20px;
+    }
+
+    .profile-username {
+        font-size: 15px;
+    }
+
+    .profile-bio {
+        font-size: 1rem;
+    }
+
+    .profile-action {
+        font-size: 15px;
+    }
+
+    .profile-action-link {
+        font-size: 17px;
+    }
+
+    .general-info h2 {
+        font-size: 18px;
+    }
+
+    .general-info-label,
+    .general-info-value {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Ensure the profile-left section is 100% width and moves to the bottom */
+    .profile-left {
+        width: 100%;
+        order: 2; /* Move it to the bottom in flexbox layout */
+        margin-top: 2em; /* Space above it */
+        margin-bottom: 2em; /* Add margin below as well */
+    }
+
+    .profile-middle {
+        width: 100%;
+        
+        order: 1; /* Ensure profile-middle comes first */
+    }
+
+    /* Adjusting the vaipen card info rows for smaller screens */
+    .vaipen-card-info-row {
+        flex-direction: column; /* Stack label and value vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    /* Label styling for smaller screens */
+    .vaipen-card-info-label {
+        width: 100%; /* Take up the full width */
+        margin-bottom: 0.5em; /* Add space below label */
+    }
+
+    /* Value styling for smaller screens */
+    .vaipen-card-info-value {
+        width: 100%; /* Take up the full width */
+        text-align: left; /* Align the text to the left */
+    }
+
+    /* Ensure vaipen card section spans across the entire width */
+    .vaipen-card-infos {
+        padding: 15px;
+        margin: 20px 0; /* Space around the vaipen card section */
+        border-radius: 10px;
+    }
+}
+
+/* Container for the upload link */
+.product-upload-link {
+    margin: 20px 0;
+}
+
+.upload-product-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-product-button:hover {
+    background-color: #0056b3;
+}
+
+.upload-product-button i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+#product-upload-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px 25px;
+    border-radius: 8px;
+    max-width: 500px;
+
+    /* Center horizontally */
+    margin: 20px auto; /* top/bottom 20px, auto left/right to center */
+}
+/* Form fields */
+#product-upload-form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#product-upload-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+#product-upload-form input[type="text"],
+#product-upload-form input[type="number"],
+#product-upload-form select,
+#product-upload-form textarea,
+#product-upload-form input[type="file"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+#product-upload-form input[type="text"]:focus,
+#product-upload-form input[type="number"]:focus,
+#product-upload-form select:focus,
+#product-upload-form textarea:focus,
+#product-upload-form input[type="file"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea height */
+#product-upload-form textarea {
+    min-height: 80px;
+}
+
+/* Submit button */
+#product-upload-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+#product-upload-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #product-upload-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+}
+
+/* Navbar Styling */
+.navbar-container {
+    background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 12px;   
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.navbar-brand {
+    font-size: 24px; /* Larger text for brand name */
+    font-weight: 700; /* Bolder font */
+    color: inherit;
+    letter-spacing: 1px; /* Slight letter spacing for a clean look */
+}
+
+/* Button class for the logo link */
+.button-class {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Menu Links Container */
+.menu-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    gap: 30px; /* Space between each menu item */
+}
+
+/* Menu Item Styling */
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:  #f8f9fa; /* Default dark text */
+    font-size: 18px; /* Text size */
+    padding: 9px 12px; /* Add padding for clickable area */
+    border-radius: 10px; /* Rounded corners */
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Icon Styling */
+.menu-item i {
+    font-size: 22px; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+    color: #f8f9fa; /* Default icon color */
+   
+}
+
+/* Text Styling */
+.menu-item span {
+    font-size: 18px; /* Font size for menu text */
+    font-weight: 600; /* Bolder text for emphasis */
+}
+
+/* Active Menu Item */
+.menu-item.active {
+   
+    color:  black; /* White text for active item */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+}
+
+.menu-item.active i {
+    color:  #199576; /* White icon for active item */
+}
+
+/* Make search container fit inside the menu-top */
+.menu-top .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 480px;      /* adjust size inside navbar */
+    margin: 0 20px;         /* spacing from left/right */
+}
+
+/* Search form layout */
+.menu-top .search-container form {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Search input styling */
+.menu-top .search-container .search-input {
+    flex-grow: 1;
+    padding: 9px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Search button styling */
+.menu-top .search-container .btn-search {
+
+    display: none;
+    padding: 9px 16px;
+    border: none;
+    background-color: #457b9d;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.menu-top .search-container .btn-search:hover {
+    background-color: #35607c;
+}
+
+.menu-top .search-container .search-input:focus {
+    border-color: #199576; /* Your desired color */
+    outline: none;         /* Remove default outline */
+    box-shadow: 0 0 5px rgba(25, 149, 118, 0.5); /* Optional subtle glow */
+}
+
+.search-results-box {
+    position: absolute;
+    top: 155px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 0;
+    max-height: 380px;
+    overflow-y: auto;
+    z-index: 2000;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.search-results-box.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.search-item {
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 1px solid #f2f2f2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    outline: none;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.search-item .info {
+    display: flex;
+    flex-direction: column;
+    color: #222;
+    font-size: 0.95rem;
+}
+
+.search-item .info .title {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.search-item .info .details {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.search-item:hover,
+.search-item[aria-selected="true"] {
+    background: #f5f7ff;
+}
+
+.no-results {
+    text-align: center;
+    padding: 15px;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+
+    .menu-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1000;
+        border-radius: 10px;
+    }
+    
+    /* Navbar Styling */
+    .navbar-container {
+        background: linear-gradient(135deg, #0056b3, #199576 ); /* Soft gradient from dark to light */
+        width: 100%;
+    }
+    
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    /* Logo Section */
+    .logo-section {
+        display: flex;
+        align-items: center;
+        padding: 5px 7px;
+        border-radius: 10px;
+        background-color: none; /* Educational site color */
+        color: #ffffff; /* White text for contrast */
+        font-weight: bold;
+        font-size: 13px; /* Standard font size for small devices */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-logo {
+        height: 29px;
+        margin-right: 3px;
+    }
+    
+    .navbar-brand {
+        font-size: 17px; /* Standard font size for brand name */
+        font-weight: 700; /* Bolder font */
+        color: inherit;
+        letter-spacing: 1px; /* Slight letter spacing for a clean look */
+    }
+    
+    /* Button class for the logo link */
+    .button-class {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    /* Menu Links Container */
+    .menu-links {
+        display: flex;
+        justify-content: center; /* Center the links */
+        align-items: center;
+        gap: 5px; /* Space between each menu item */
+        margin-left: 10px;
+    }
+    
+    /* Menu Item Styling */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color:  #f8f9fa; /* Default dark text */
+        font-size: 10px; /* Text size */
+        padding: 5px 5px; /* Add padding for clickable area */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth *//
+    }
+    
+    /* Icon Styling */
+    .menu-item i {
+        font-size: 19px; /* Standard font size for icons */
+        margin: 0px; /* Space between icon and text */
+        color: #f8f9fa; /* Default icon color */
+    }
+    
+    /* Text Styling */
+    .menu-item span {
+        display: none;
+    }
+    
+    /* Active Menu Item */
+    .menu-item.active {
+        color:  #333; /* White text for active item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for active item */
+    }
+    
+    .menu-item.active i {
+        color:  #199576; /* White icon for active item */
+    }
+
+    .menu-top .search-container {
+        max-width: 100%;
+        margin: 1px 0 0;
+        flex-grow: 1;          /* allows the container to grow and fill horizontal space */
+        justify-content: flex-start; /* align items to start for better alignment */
+    }
+
+
+    .menu-top .search-container form {
+        gap: 3px;
+    }
+
+    .menu-top .search-container .search-input {
+        font-size: 17px;
+        padding: 1px 3px;
+        border-radius: 10px;
+    }
+
+    /* btn-search stays hidden on mobile */
+    .menu-top .search-container .btn-search {
+        display: none;
+    }
+    .menu-top .search-container .search-input:focus {
+        border-color: #199576; /* Your desired color */
+        outline: none;         /* Remove default outline */
+        box-shadow: 0 0 5px rgba(25, 149, 118, 0.5); /* Optional subtle glow */
+    }
+
+    .search-results-box {
+        top: 120px;                    /* Slightly closer to input */
+        left: 5px;
+        right: 5px;
+        max-height: 300px;
+        padding: 6px 0;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .search-item {
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .search-item img {
+        width: 35px;
+        height: 35px;
+        border-radius: 6px;
+    }
+
+    .search-item .info {
+        font-size: 0.85rem;
+    }
+
+    .search-item .info .title {
+        font-size: 0.90rem;
+        margin-bottom: 2px;
+    }
+
+    .search-item .info .details {
+        font-size: 0.78rem;
+    }
+
+    .no-results {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+
+}
+
+
+/* Flex container for main sections */
+.profile {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 5em; /* Adjusted to accommodate the fixed menu */
+    
+}
+
+/* Styling for each main section */
+.profile-left, .profile-middle {
+    
+    margin-bottom: 1em;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    
+}
+
+.profile-left {
+    width: 30%;
+    margin-top: 1%;
+        
+}
+
+.vaipen-card-infos {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd; /* Border around the section */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.vaipen-card-infos h2 {
+    width: 100%;
+    text-align: center;    
+}
+
+/* Profile School Design */
+.vaipen-card-info {
+    margin-bottom: 20px;
+    border-radius: 5px; /* Rounded corners for each school */
+    
+}
+.vaipen-card-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9; /* Background color */
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.vaipen-card-info-label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333; /* Dark text color for contrast */
+}
+
+.vaipen-card-info-value {
+    font-size: 16px;
+    color: #555; /* Slightly lighter color for the value */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 10px; /* Padding for the value */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+.profile-middle {
+    width: 70%;
+    margin-top: 1%;
+
+}
+
+
+/* Profile Section */
+
+
+.profile-center {
+    text-align: center;
+}
+.profile-cover-picture {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* Prevents the image from overflowing */
+}
+
+.profile-cover-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block; /* Ensures the image behaves as a block element */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align items to the left horizontally */
+    margin: -50px auto 20px;
+    position: relative;
+}
+
+
+.profile-photo {
+    position: relative;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Stack name and username vertically */
+    margin-left: 20px; /* Spacing between the profile photo and info */
+    margin-top: 40px; /* Add more top margin to move it down */
+    text-align: left;
+}
+.profile-info a {
+    font-size: 24px;
+    font-weight: bold;
+    color:  black;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.verified-icon[title] {
+    position: relative;
+    cursor: pointer;
+}
+
+.verified-icon[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 125%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+.profile-username {
+    font-size: 18px;
+    color: #777;
+}
+.profile-bio {
+    margin: 0;
+    color: black;
+    font-size: 1rem;
+}
+
+/* Container styling */
+/* Container styling */
+.profile-update {
+    display: flex;
+    justify-content: space-between; /* Ensure space between the two buttons */
+    gap: 2rem; /* Spacing between the two buttons */
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-top: 1.5rem;
+    font-family: 'Roboto';
+}
+
+/* Common styling for both links */
+.profile-action {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center text and icon */
+    width: 50%; /* Ensure each link takes up 50% width */
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Edit Profile link styling */
+.profile-action.edit-profile {
+    color: #ffffff;
+    background-color:  #0056b3; /* Bootstrap primary blue */
+}
+
+.profile-action.edit-profile:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Settings link styling */
+.profile-action.settings {
+    color: #ffffff;
+    background-color:#0056b3; /* Bootstrap success green */
+}
+
+.profile-action.settings:hover {
+    background-color:#0056b3; /* Darker green on hover */
+}
+
+.profile-action.about {
+    color: #ffffff;
+    background-color:#0056b3; /* Bootstrap success green */
+}
+
+
+.profile-action.about:hover {
+    background-color: whitesmoke; /* Darker green on hover */
+    color: #0056b3;
+}
+
+
+ /* Container Styling */
+ .account-verification {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Verify Account Button Styling */
+.profile-verification {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for 'Verify Account' */
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    text-transform: uppercase;
+   
+}
+
+/* Hover Effects */
+
+.profile-verification:active {
+    transform: translateY(0); /* Slightly resets when clicked */
+}
+
+
+.profile-action-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Slightly increased spacing for better separation */
+    padding: 24px; /* Spacious padding for structure */
+    background-color: #fefefe; /* Soft white background */
+    border-radius: 12px; /* Increased roundness for a modern touch */
+    
+    justify-content: center; /* Centered layout */
+    text-align: center;
+}
+
+.profile-action-item {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600; /* Bold font for emphasis */
+    color: #0056b3; /* White text for dark background */
+    background-color: whitesmoke; /* Deep blue background */
+    padding: 16px; /* Added padding for better click area */
+    border-radius: 10px; /* Rounded corners for smooth visuals */
+    cursor: pointer;
+    
+}
+
+
+
+
+.profile-action-link {
+    display: block; /* Block layout for better alignment */
+    text-decoration: none;
+    font-size: 18px; /* Larger font size for readability */
+    font-weight: 600; /* Bold font for emphasis */
+    color: #0056b3; /* White text */
+    padding: 10px 14px;
+    border-radius: 8px; /* Rounded corners for buttons */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow for card depth */    
+
+}
+
+.profile-action-link:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+}
+
+
+
+@media (min-width: 768px) {
+    .profile-action-links {
+        justify-content: space-evenly; /* Distribute items evenly on medium screens */
+        gap: 24px; /* Wider spacing */
+    }
+
+    .profile-action-item {
+        flex: 1 0 45%; /* Two items per row */
+    }
+}
+
+@media (min-width: 1200px) {
+    .profile-action-item {
+        flex: 1 0 30%; /* Three items per row on large screens */
+    }
+}
+
+.form-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px; /* Adjust the position as needed */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Icon color */
+}
+
+.form-group input {
+    padding: 10px 40px; /* Add padding to the left for the icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+.form-group input:focus {
+    border-color: #1378DA;
+    outline: none;
+}
+.form-actions {
+    width: 100%;
+}
+
+.btn {
+    width: 100%; /* Make the button take up the full width */
+    padding: 12px 0; /* Adjust the padding for consistent height */
+    font-size: 1rem;
+    background-color: #1378DA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensure the padding doesn't affect the width */
+}
+
+.btn:hover {
+    background-color: #0b5fa5;
+}
+
+
+.profile-action-item i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Profile Edit Section Styling */
+.profile-edit-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
+}
+
+.profile-edit-section input[type="text"],
+.profile-edit-section input[type="email"],
+.profile-edit-section input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-edit-section button {
+    padding: 12px 30px;
+    
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-edit-section button:hover {
+    background-color: #155f44; /* Darker green on hover */
+}
+
+/* Additional Section for Notifications or Messages */
+.profile-notifications {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.profile-notifications h3 {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.profile-notifications .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-notifications .notification-item:last-child {
+    border-bottom: none;
+}
+
+.profile-notifications .notification-item .notification-message {
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-notifications .notification-item .notification-action {
+    color: #199576;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.profile-notifications .notification-item .notification-action:hover {
+    color: #155f44; /* Darker green on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    
+
+    .profile-left {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 2rem;
+    }
+
+    .profile-middle {
+        width: 100%; /* Full width on smaller screens */
+        margin-top: 1rem;
+    }
+
+    .profile-action-links {
+        flex-direction: column;
+        gap: 15px; /* Adjust the gap for mobile screens */
+    }
+
+    .profile-action-item {
+        width: 100%; /* Ensure the action items take up full width on mobile */
+        padding: 12px 20px;
+    }
+
+    .profile-edit-section {
+        padding: 1.5rem;
+    }
+
+    .profile-edit-section input,
+    .profile-edit-section button {
+        width: 100%; /* Full width for inputs and button on small screens */
+    }
+}
+
+
+/* General Information Section Styling */
+.general-info-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.general-info {
+    background-color: #f8f9fa; /* Light background for the section */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Each Row Styling */
+.general-info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Subtle border between rows */
+    align-items: center;
+}
+
+.general-info-row:last-child {
+    border-bottom: none; /* Remove border from the last row */
+}
+
+/* Label Styling */
+.general-info-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    text-align: left;
+    flex-basis: 40%;
+}
+
+/* Value Styling */
+.general-info-value {
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff; /* White background for contrast */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for value */
+    text-align: right;
+    flex-basis: 55%;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    
+    .profile {
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3em; /* Adjusted to accommodate the fixed menu */
+        
+    }
+    
+    .profile-middle {
+        width: 100%;
+        
+    }
+
+    .profile-cover-photo {
+        height: 150px;
+    }
+
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info a {
+        font-size: 20px;
+    }
+
+    .profile-username {
+        font-size: 15px;
+    }
+
+    .profile-bio {
+        font-size: 1rem;
+    }
+
+    .profile-action {
+        font-size: 15px;
+    }
+
+    .profile-action-link {
+        font-size: 17px;
+    }
+
+    .general-info h2 {
+        font-size: 18px;
+    }
+
+    .general-info-label,
+    .general-info-value {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Ensure the profile-left section is 100% width and moves to the bottom */
+    .profile-left {
+        width: 100%;
+        order: 2; /* Move it to the bottom in flexbox layout */
+        margin-top: 2em; /* Space above it */
+        margin-bottom: 2em; /* Add margin below as well */
+    }
+
+    .profile-middle {
+        width: 100%;
+        
+        order: 1; /* Ensure profile-middle comes first */
+    }
+
+    /* Adjusting the vaipen card info rows for smaller screens */
+    .vaipen-card-info-row {
+        flex-direction: column; /* Stack label and value vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    /* Label styling for smaller screens */
+    .vaipen-card-info-label {
+        width: 100%; /* Take up the full width */
+        margin-bottom: 0.5em; /* Add space below label */
+    }
+
+    /* Value styling for smaller screens */
+    .vaipen-card-info-value {
+        width: 100%; /* Take up the full width */
+        text-align: left; /* Align the text to the left */
+    }
+
+    /* Ensure vaipen card section spans across the entire width */
+    .vaipen-card-infos {
+        padding: 15px;
+        margin: 20px 0; /* Space around the vaipen card section */
+        border-radius: 10px;
+    }
+}
+
+/* Container for the upload link */
+.product-upload-link {
+    margin: 20px 0;
+}
+
+.upload-product-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-product-button:hover {
+    background-color: #0056b3;
+}
+
+.upload-product-button i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+#product-upload-form {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px 25px;
+    border-radius: 8px;
+    max-width: 500px;
+
+    /* Center horizontally */
+    margin: 20px auto; /* top/bottom 20px, auto left/right to center */
+}
+/* Form fields */
+#product-upload-form div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#product-upload-form label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 14px;
+}
+
+#product-upload-form input[type="text"],
+#product-upload-form input[type="number"],
+#product-upload-form select,
+#product-upload-form textarea,
+#product-upload-form input[type="file"] {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+#product-upload-form input[type="text"]:focus,
+#product-upload-form input[type="number"]:focus,
+#product-upload-form select:focus,
+#product-upload-form textarea:focus,
+#product-upload-form input[type="file"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Textarea height */
+#product-upload-form textarea {
+    min-height: 80px;
+}
+
+/* Submit button */
+#product-upload-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+#product-upload-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #product-upload-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+}

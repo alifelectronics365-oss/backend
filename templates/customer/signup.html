@@ -1,0 +1,150 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="{% static 'accounts/images/vaipen-logo-ico.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'customer/css/signup.css'%}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+   
+    <title>{% block title %} Sign Up {% endblock %}</title>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<div class="menu-top">
+    <div class="container-fluid navbar-container">
+        <div class="menu">
+            <!-- Logo Section -->          
+            <div class="logo-section">
+                <a href="#" class="button-class">
+                    <div class="logo-container">
+                        <span class="navbar-brand"> PIELAM </span>
+                    </div>
+                </a>
+            </div>     
+            
+       
+            <!-- Menu Links -->
+            <div class="menu-links">
+                <a href="{% url 'ponno:home' %}" class="menu-item icon-button " aria-label="Home">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="menu-item icon-button ">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </a>
+               
+                <a href="{% url 'customer:profile' %}" class="menu-item icon-button  aria-label="Profile">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Profile</span>
+                </a>            
+            </div>               
+        </div>
+    </div>
+</div>
+
+
+ <main class="main">
+   
+    <section class="form-section">
+         
+                <a href="{% url 'customer:signin' %}" class="signin {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" aria-label="Profile">
+                    
+                    <span>Sign In</span>
+                </a>
+
+        <div class="form-container">
+            
+            <h1 class="form-title">Create Your Account</h1>
+                
+            {% if messages %}
+            <div class="message-container">
+                <p class="message {% for message in messages %}{{ message.tags }}{% endfor %}">
+                    {% for message in messages %}
+                        {{ message }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+            {% endif %}
+
+            <form action="" method="post">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="email_or_phone">Email or Phone:</label>
+                    <div class="input-container">
+                        <i class="fas fa-user"></i>
+                        <input
+                            type="text"
+                            id="email_or_phone"
+                            name="email_or_phone"
+                            placeholder="Enter your email or phone"
+                            value="{{ request.POST.email_or_phone|default:'' }}"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+                    <span id="email_or_phone-feedback" style="font-size: 0.9rem;" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password1">Password:</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input
+                            type="password"
+                            id="password1"
+                            name="password1"
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="new-password"
+                            minlength="8"
+                        >
+                    </div>
+                    <div id="password-feedback" style="font-size: 0.9rem; color: red;" aria-live="polite"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password2">Confirm Password:</label>
+                    <div class="input-container">
+                        <i class="fas fa-lock"></i>
+                        <input
+                            type="password"
+                            id="password2"
+                            name="password2"
+                            placeholder="Confirm your password"
+                            required
+                            autocomplete="new-password"
+                            minlength="8"
+                        >
+                    </div>
+                    <div id="confirm-password-feedback" style="font-size: 0.9rem; color: red;" aria-live="polite"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Sign Up</button>
+                </div>
+            </form>
+
+             
+        </div>
+    </section>
+
+    
+</main>
+
+
+    <footer class="footer">
+        <p>© 2024 vaipen. All rights reserved.</p>
+    </footer>
+
+    
+ 
+</body>
+</html>
